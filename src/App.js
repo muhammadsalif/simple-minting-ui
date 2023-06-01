@@ -1,25 +1,58 @@
-import logo from './logo.svg';
-import './App.css';
+import * as React from "react";
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
+import Grid from "@mui/material/Grid";
+import Button from "@mui/material/Button";
+import ProTip from "./ProTip";
+import theme from "./theme";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <main
+      style={{
+        width: "100%",
+        minHeight: "100vh",
+        backgroundColor: theme.palette.background.main,
+      }}
+    >
+      <Container style={{ padding: "6em 2em" }} maxWidth="xl">
+        <Grid
+          container
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+          spacing={2}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <Grid item xs={8}>
+            <Typography
+              style={{ color: "white" }}
+              variant="h2"
+              component="h1"
+              gutterBottom
+            >
+              ERC-20 Token Mint{" "}
+            </Typography>
+          </Grid>
+          <Grid
+            item
+            md={4}
+            xs={10}
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Button size="large" variant="contained">
+              Connect Wallet
+            </Button>
+          </Grid>
+        </Grid>
+        <ProTip />
+        {/* <Copyright /> */}
+      </Container>
+    </main>
   );
 }
-
-export default App;
