@@ -50,7 +50,7 @@ export default function App() {
                 <img
               alt="logo"
               src={logo}
-              style={{ width: "100%", height: "100%" }}
+              style={{ width: "200px", height: "100px" }}
             />
           </Grid>
           <Grid
