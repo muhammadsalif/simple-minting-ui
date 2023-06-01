@@ -15,7 +15,11 @@ export default function App() {
         backgroundColor: theme.palette.background.main,
       }}
     >
-      <Container style={{ padding: "6em 2em" }} maxWidth="xl">
+      <Container
+        sx={{ padding: { xs: "2em 0 0 0", md: "3em 2em" } }}
+        // style={{ padding: "6em 2em" }}
+        maxWidth="xl"
+      >
         <Grid
           container
           style={{
@@ -31,6 +35,10 @@ export default function App() {
               variant="h2"
               component="h1"
               gutterBottom
+              sx={{
+                fontSize: { xs: 30, md: 35 },
+                textAlign: { xs: "center", md: "left" },
+              }}
             >
               ERC-20 Token Mint{" "}
             </Typography>
@@ -45,7 +53,13 @@ export default function App() {
               alignItems: "center",
             }}
           >
-            <Button size="large" variant="contained">
+            <Button
+              size="large"
+              variant="contained"
+              sx={{
+                marginBottom: { xs: 4, md: 0 },
+              }}
+            >
               Connect Wallet
             </Button>
           </Grid>

@@ -12,13 +12,18 @@ import Typography from "@mui/material/Typography";
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#002",
   ...theme.typography.body2,
-  padding: theme.spacing(10),
   textAlign: "center",
   color: theme.palette.text.secondary,
   height: "100%",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
+  [theme.breakpoints.down("md")]: {
+    padding: theme.spacing(2),
+  },
+  [theme.breakpoints.up("md")]: {
+    padding: theme.spacing(10),
+  },
 }));
 
 export default function ProTip() {
@@ -31,9 +36,9 @@ export default function ProTip() {
           alignItems: "center",
           justifyContent: "center",
         }}
-        spacing={2}
+        // spacing={2}
       >
-        <Grid item xs={8}>
+        <Grid item xs={12} md={8}>
           <Item>
             <FormControl>
               <div
@@ -47,6 +52,7 @@ export default function ProTip() {
                 <FormLabel style={{ color: "white" }}>
                   <Typography
                     style={{ color: "white", marginRight: "1em" }}
+                    sx={{ fontSize: { xs: 15, md: 20 } }}
                     variant="body"
                     component="h2"
                     gutterBottom
@@ -54,7 +60,14 @@ export default function ProTip() {
                     Receiver Address{" "}
                   </Typography>
                 </FormLabel>
-                <TextField style={{ backgroundColor: "white" }} color="info" />
+                <TextField
+                  sx={{
+                    input: {
+                      color: "black",
+                      background: "white",
+                    },
+                  }}
+                />{" "}
               </div>
               <div
                 style={{
@@ -67,6 +80,7 @@ export default function ProTip() {
                 <FormLabel style={{ color: "white" }}>
                   <Typography
                     style={{ color: "white", marginRight: "1em" }}
+                    sx={{ fontSize: { xs: 15, md: 20 } }}
                     variant="body"
                     component="h2"
                     gutterBottom
@@ -74,7 +88,14 @@ export default function ProTip() {
                     Token tick{" "}
                   </Typography>
                 </FormLabel>
-                <TextField style={{ backgroundColor: "white" }} color="info" />
+                <TextField
+                  sx={{
+                    input: {
+                      color: "black",
+                      background: "white",
+                    },
+                  }}
+                />{" "}
               </div>
               <div
                 style={{
@@ -90,11 +111,19 @@ export default function ProTip() {
                     variant="body"
                     component="h2"
                     gutterBottom
+                    sx={{ fontSize: { xs: 15, md: 20 } }}
                   >
                     Max Supply{" "}
                   </Typography>
                 </FormLabel>
-                <TextField style={{ backgroundColor: "white" }} color="info" />
+                <TextField
+                  sx={{
+                    input: {
+                      color: "black",
+                      background: "white",
+                    },
+                  }}
+                />
               </div>
               <Button size="large" variant="contained">
                 Mint
@@ -103,11 +132,13 @@ export default function ProTip() {
           </Item>
         </Grid>
         <Grid item md={4} xs={10}>
-          <img
-            alt="rocket.png"
-            src={rocket}
-            style={{ width: "100%", height: "100%" }}
-          />
+          <Box sx={{ display: { xs: "none", md: "block" } }}>
+            <img
+              alt="rocket.png"
+              src={rocket}
+              style={{ width: "100%", height: "100%" }}
+            />
+          </Box>
         </Grid>
       </Grid>
     </Box>
