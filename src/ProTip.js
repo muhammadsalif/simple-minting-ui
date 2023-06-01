@@ -7,8 +7,9 @@ import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { FormControl, FormLabel } from "@mui/material";
-import rocket from "./rocket.png";
 import Typography from "@mui/material/Typography";
+import rocket from "./assets/rocket.png";
+import CustomSnackbar from "./reusable/CustomSnackbar";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#002",
@@ -27,19 +28,67 @@ const Item = styled(Paper)(({ theme }) => ({
   },
 }));
 
+
 export default function ProTip() {
   const [data,setData]= useState({
     receiverAddress: "",
     tick: "",
     maxSupply: ""
   })
+ // snackbar details
+ const [alertBox, setAlertBox] = useState({
+  isOpen: false,
+  message: "",
+  backgroundColor: "#a71313"
+});
 
 
-  const mintHandler =()=>{
-    console.log(data)
+const validate = () => {
+  if (data.receiverAddress === "" || data.tick ==="" || data.maxSupply ==="") {
+    return {
+      success: false,
+      message: "Please fill all values to continue",
+    };
   }
+  return {
+    success: true,
+    message: "",
+  };
+}
+const mintHandler =()=>{
+    let vali = validate();
+    if (vali.success === false) {
+      setAlertBox({
+        isOpen: true,
+        message: vali.message,
+        backgroundColor: "#a71313"
+      });
+      return;
+    } else {
+      setAlertBox({
+        isOpen: true,
+        message: "Token 'Test' Successfully Minted",
+        backgroundColor: "#177910" 
+       });
+    }
+}
+
+function handleSnackbarState(isOpen) {
+    setAlertBox({
+        ...alertBox,
+        isOpen: isOpen
+    });
+}
   return (
     <Box sx={{ flexGrow: 1 }}>
+        {alertBox.isOpen &&
+                    <CustomSnackbar
+                        isOpen={alertBox.isOpen}
+                        autoHideDuration={3000}
+                        message={alertBox.message}
+                        backgroundColor={alertBox.backgroundColor}
+                        handleSnackbarOpen={handleSnackbarState} />
+                }
       <Grid
         container
         style={{
