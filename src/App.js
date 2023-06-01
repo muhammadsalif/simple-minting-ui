@@ -5,6 +5,7 @@ import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
 import ProTip from "./ProTip";
 import theme from "./theme";
+import logo from "./assets/logo.png";
 
 export default function App() {
 
@@ -34,7 +35,7 @@ export default function App() {
           spacing={2}
         >
           <Grid item xs={8}>
-            <Typography
+            {/* <Typography
               style={{ color: "white" }}
               variant="h2"
               component="h1"
@@ -45,7 +46,12 @@ export default function App() {
               }}
             >
               ERC-20 Token Mint{" "}
-            </Typography>
+            </Typography> */}
+                <img
+              alt="logo"
+              src={logo}
+              style={{ width: "100%", height: "100%" }}
+            />
           </Grid>
           <Grid
             item
