@@ -50,6 +50,14 @@ const validate = () => {
       message: "Please fill all values to continue",
     };
   }
+  // if(
+  //   parseFloat(data.maxSupply) < 1000 || 
+  //   parseFloat(data.maxSupply) > 1000000000){
+  //     return {
+  //       success: false,
+  //       message: "Min value is 1000, Max is 1000000000(10^9)",
+  //     };
+  //   }
   return {
     success: true,
     message: "",
@@ -162,7 +170,9 @@ function handleSnackbarState(isOpen) {
                       background: "white",
                     },
                   }}
-
+                  inputProps={{
+                    maxLength: 4,
+                    }}
                   value={data.tick}
                   onChange={e=> setData(d=> {
                     return {
@@ -199,12 +209,27 @@ function handleSnackbarState(isOpen) {
                     },
                   }}
                   value={data.maxSupply}
-                  onChange={e=> setData(d=> {
-                    return {
-                      ...d,
-                      maxSupply: e.target.value
+                  onChange={(e)=> {
+                    if (!e.target.value) {
+                      setData(d=> {
+                        return {
+                          ...d,
+                          maxSupply: ""
+                        }
+                      })
                     }
-                  })}
+                    if (
+                      !isNaN(e.target.value) &&
+                      /^[0-9]\d*(\.\d+)?$/.test(parseFloat(e.target.value))
+                    ) {
+                    setData(d=> {
+                      return {
+                        ...d,
+                        maxSupply: e.target.value
+                      }
+                    })
+                  }
+                  }}
                 />
               </div>
               <Button size="large" variant="contained" onClick={mintHandler}>
