@@ -119,8 +119,8 @@ function handleSnackbarState(isOpen) {
               >
                 <FormLabel style={{ color: "white" }}>
                   <Typography
-                    style={{ color: "white", marginRight: "1em",textAlign: "left" }}
-                    sx={{ fontSize: { xs: 15, md: 20 }, color: "#FFF42C" }}
+                    style={{ color: "#FFF42C", marginRight: "1em",textAlign: "left" }}
+                    sx={{ fontSize: { xs: 15, md: 20 } }}
                     variant="body"
                     component="h2"
                     gutterBottom
@@ -134,9 +134,10 @@ function handleSnackbarState(isOpen) {
                       color: "black",
                       background: "white",
                     },
-                  "& .MuiOutlinedInput-notchedOutline":{
-                    border:0
-                  }
+                 "& fieldset": { border: 'none' },
+                    "& .Mui-focused .MuiOutlinedInput-notchedOutline":{
+                      border:0
+                    }
                   }}
                   value={data.receiverAddress}
                   onChange={e=> setData(d=> {
@@ -157,8 +158,8 @@ function handleSnackbarState(isOpen) {
               >
                 <FormLabel style={{ color: "white" }}>
                   <Typography
-                    style={{ color: "white", marginRight: "1em",textAlign: "left" }}
-                    sx={{ fontSize: { xs: 15, md: 20 } ,color: "#FFF42C" }}
+                    style={{ color: "#FFF42C", marginRight: "1em",textAlign: "left" }}
+                    sx={{ fontSize: { xs: 15, md: 20 }  }}
                     variant="body"
                     component="h2"
                     gutterBottom
@@ -172,7 +173,8 @@ function handleSnackbarState(isOpen) {
                       color: "black",
                       background: "white",
                     },
-                    "& .MuiOutlinedInput-notchedOutline":{
+                    "& fieldset": { border: 'none' },
+                    "& .Mui-focused .MuiOutlinedInput-notchedOutline":{
                       border:0
                     }
                   }}
@@ -198,11 +200,11 @@ function handleSnackbarState(isOpen) {
               >
                 <FormLabel style={{ color: "white" }}>
                   <Typography
-                    style={{ color: "white", marginRight: "1em" ,textAlign: "left"}}
+                    style={{ color: "#FFF42C", marginRight: "1em" ,textAlign: "left"}}
                     variant="body"
                     component="h2"
                     gutterBottom
-                    sx={{ fontSize: { xs: 15, md: 20 } ,color: "#FFF42C" }}
+                    sx={{ fontSize: { xs: 15, md: 20 } }}
                   >
                     Max Supply{" "}
                   </Typography>
@@ -213,7 +215,8 @@ function handleSnackbarState(isOpen) {
                       color: "black",
                       background: "white",
                     },
-                    "& .MuiOutlinedInput-notchedOutline":{
+                    "& fieldset": { border: 'none' },
+                    "& .Mui-focused .MuiOutlinedInput-notchedOutline":{
                       border:0
                     }
                   }}
