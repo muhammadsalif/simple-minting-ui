@@ -5,7 +5,7 @@ import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
 import ProTip from "./ProTip";
 import theme from "./theme";
-import logo from "./assets/logo.png";
+import logo from "./assets/logo.svg";
 
 export default function App() {
 
