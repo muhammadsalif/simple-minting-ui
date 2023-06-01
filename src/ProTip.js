@@ -1,4 +1,5 @@
 import * as React from "react";
+import {useState} from 'react'
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
@@ -27,6 +28,16 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 export default function ProTip() {
+  const [data,setData]= useState({
+    receiverAddress: "",
+    tick: "",
+    maxSupply: ""
+  })
+
+
+  const mintHandler =()=>{
+    console.log(data)
+  }
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Grid
@@ -67,6 +78,13 @@ export default function ProTip() {
                       background: "white",
                     },
                   }}
+                  value={data.receiverAddress}
+                  onChange={e=> setData(d=> {
+                    return {
+                      ...d,
+                      receiverAddress: e.target.value
+                    }
+                  })}
                 />{" "}
               </div>
               <div
@@ -95,6 +113,14 @@ export default function ProTip() {
                       background: "white",
                     },
                   }}
+
+                  value={data.tick}
+                  onChange={e=> setData(d=> {
+                    return {
+                      ...d,
+                      tick: e.target.value
+                    }
+                  })}
                 />{" "}
               </div>
               <div
@@ -123,9 +149,16 @@ export default function ProTip() {
                       background: "white",
                     },
                   }}
+                  value={data.maxSupply}
+                  onChange={e=> setData(d=> {
+                    return {
+                      ...d,
+                      maxSupply: e.target.value
+                    }
+                  })}
                 />
               </div>
-              <Button size="large" variant="contained">
+              <Button size="large" variant="contained" onClick={mintHandler}>
                 Mint
               </Button>
             </FormControl>

@@ -7,6 +7,10 @@ import ProTip from "./ProTip";
 import theme from "./theme";
 
 export default function App() {
+
+  const connectWalletHandler= ()=>{
+    console.log("connect wallet now")
+  }
   return (
     <main
       style={{
@@ -59,6 +63,7 @@ export default function App() {
               sx={{
                 marginBottom: { xs: 4, md: 0 },
               }}
+              onClick={connectWalletHandler}
             >
               Connect Wallet
             </Button>
