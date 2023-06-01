@@ -34,7 +34,10 @@ export default function App() {
           }}
           spacing={2}
         >
-          <Grid item xs={8}>
+          <Grid item xs={8} sx={{
+            display: {md: "unset", xs: "flex"} ,
+            justifyContent: {md: "unset", xs: "center"} 
+          }}>
             {/* <Typography
               style={{ color: "white" }}
               variant="h2"
