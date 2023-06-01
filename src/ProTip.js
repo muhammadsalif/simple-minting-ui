@@ -51,7 +51,7 @@ export default function ProTip() {
               >
                 <FormLabel style={{ color: "white" }}>
                   <Typography
-                    style={{ color: "white", marginRight: "1em" }}
+                    style={{ color: "white", marginRight: "1em",textAlign: "left" }}
                     sx={{ fontSize: { xs: 15, md: 20 } }}
                     variant="body"
                     component="h2"
@@ -79,7 +79,7 @@ export default function ProTip() {
               >
                 <FormLabel style={{ color: "white" }}>
                   <Typography
-                    style={{ color: "white", marginRight: "1em" }}
+                    style={{ color: "white", marginRight: "1em",textAlign: "left" }}
                     sx={{ fontSize: { xs: 15, md: 20 } }}
                     variant="body"
                     component="h2"
@@ -107,7 +107,7 @@ export default function ProTip() {
               >
                 <FormLabel style={{ color: "white" }}>
                   <Typography
-                    style={{ color: "white", marginRight: "1em" }}
+                    style={{ color: "white", marginRight: "1em" ,textAlign: "left"}}
                     variant="body"
                     component="h2"
                     gutterBottom
