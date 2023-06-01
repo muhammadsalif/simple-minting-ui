@@ -120,7 +120,7 @@ function handleSnackbarState(isOpen) {
                 <FormLabel style={{ color: "white" }}>
                   <Typography
                     style={{ color: "white", marginRight: "1em",textAlign: "left" }}
-                    sx={{ fontSize: { xs: 15, md: 20 } }}
+                    sx={{ fontSize: { xs: 15, md: 20 }, color: "#FFF42C" }}
                     variant="body"
                     component="h2"
                     gutterBottom
@@ -134,6 +134,9 @@ function handleSnackbarState(isOpen) {
                       color: "black",
                       background: "white",
                     },
+                  "& .MuiOutlinedInput-notchedOutline":{
+                    border:0
+                  }
                   }}
                   value={data.receiverAddress}
                   onChange={e=> setData(d=> {
@@ -155,7 +158,7 @@ function handleSnackbarState(isOpen) {
                 <FormLabel style={{ color: "white" }}>
                   <Typography
                     style={{ color: "white", marginRight: "1em",textAlign: "left" }}
-                    sx={{ fontSize: { xs: 15, md: 20 } }}
+                    sx={{ fontSize: { xs: 15, md: 20 } ,color: "#FFF42C" }}
                     variant="body"
                     component="h2"
                     gutterBottom
@@ -169,6 +172,9 @@ function handleSnackbarState(isOpen) {
                       color: "black",
                       background: "white",
                     },
+                    "& .MuiOutlinedInput-notchedOutline":{
+                      border:0
+                    }
                   }}
                   inputProps={{
                     maxLength: 4,
@@ -196,7 +202,7 @@ function handleSnackbarState(isOpen) {
                     variant="body"
                     component="h2"
                     gutterBottom
-                    sx={{ fontSize: { xs: 15, md: 20 } }}
+                    sx={{ fontSize: { xs: 15, md: 20 } ,color: "#FFF42C" }}
                   >
                     Max Supply{" "}
                   </Typography>
@@ -207,6 +213,9 @@ function handleSnackbarState(isOpen) {
                       color: "black",
                       background: "white",
                     },
+                    "& .MuiOutlinedInput-notchedOutline":{
+                      border:0
+                    }
                   }}
                   value={data.maxSupply}
                   onChange={(e)=> {
@@ -232,7 +241,12 @@ function handleSnackbarState(isOpen) {
                   }}
                 />
               </div>
-              <Button size="large" variant="contained" onClick={mintHandler}>
+              <Button size="large" variant="contained"   sx={{
+                
+                textTransform: "none",
+                color: "#fff",
+                fontWeight: 600
+              }} onClick={mintHandler}>
                 Mint
               </Button>
             </FormControl>

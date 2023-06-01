@@ -53,7 +53,7 @@ export default function App() {
                 <img
               alt="logo"
               src={logo}
-              style={{ width: "180px", height: "120px" }}
+              style={{ width: "170px", height: "120px" }}
             />
           </Grid>
           <Grid
@@ -71,6 +71,9 @@ export default function App() {
               variant="contained"
               sx={{
                 marginBottom: { xs: 4, md: 0 },
+                textTransform: "none",
+                color: "#fff",
+                fontWeight: 600
               }}
               onClick={connectWalletHandler}
             >
