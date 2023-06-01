@@ -135,9 +135,9 @@ function handleSnackbarState(isOpen) {
                       background: "white",
                     },
                  "& fieldset": { border: 'none' },
-                    "& .Mui-focused .MuiOutlinedInput-notchedOutline":{
-                      border:0
-                    }
+                 "&.Mui-focused fieldset":{
+                  border: 'none' 
+                }
                   }}
                   value={data.receiverAddress}
                   onChange={e=> setData(d=> {
@@ -174,8 +174,8 @@ function handleSnackbarState(isOpen) {
                       background: "white",
                     },
                     "& fieldset": { border: 'none' },
-                    "& .Mui-focused .MuiOutlinedInput-notchedOutline":{
-                      border:0
+                    "&.Mui-focused fieldset":{
+                      border: 'none' 
                     }
                   }}
                   inputProps={{
@@ -216,8 +216,8 @@ function handleSnackbarState(isOpen) {
                       background: "white",
                     },
                     "& fieldset": { border: 'none' },
-                    "& .Mui-focused .MuiOutlinedInput-notchedOutline":{
-                      border:0
+                    "&.Mui-focused fieldset":{
+                      border: 'none' 
                     }
                   }}
                   value={data.maxSupply}
