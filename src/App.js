@@ -21,7 +21,7 @@ export default function App() {
       }}
     >
       <Container
-        sx={{ padding: { xs: "2em 0 0 0", md: "3em 2em" } }}
+        sx={{ padding: { xs: "2em 0 0 0", md: "10px 2em 3em 2em" } }}
         // style={{ padding: "6em 2em" }}
         maxWidth="xl"
       >
@@ -62,7 +62,7 @@ export default function App() {
             xs={10}
             style={{
               display: "flex",
-              justifyContent: "center",
+              justifyContent:  {md: "flex-end", xs: "center"} ,
               alignItems: "center",
             }}
           >
