@@ -164,7 +164,7 @@ function handleSnackbarState(isOpen) {
                     component="h2"
                     gutterBottom
                   >
-                    Token tick{" "}
+                    Token ticker{" "}
                   </Typography>
                 </FormLabel>
                 <TextField

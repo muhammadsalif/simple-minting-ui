@@ -60,7 +60,7 @@ export default function App() {
             item
             md={4}
             xs={10}
-            style={{
+            sx={{
               display: "flex",
               justifyContent:  {md: "flex-end", xs: "center"} ,
               alignItems: "center",
